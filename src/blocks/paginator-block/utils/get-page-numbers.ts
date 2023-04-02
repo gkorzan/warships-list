@@ -1,13 +1,9 @@
 const PAGINATOR_LENGTH = 7;
 
-export const getPageNumbers = (
-  totalVehicles: number,
-  vehiclesPerPage: number,
-  currentPage: number
-): number[] => {
+export const getPageNumbers = (totalPageNumber: number, currentPage: number): number[] => {
   const pageNumbers = [];
 
-  for (let i = 1; i <= Math.ceil(totalVehicles / vehiclesPerPage); i += 1) {
+  for (let i = 1; i <= totalPageNumber; i += 1) {
     pageNumbers.push(i);
   }
 

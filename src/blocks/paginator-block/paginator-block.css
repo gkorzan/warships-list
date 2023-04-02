@@ -74,3 +74,23 @@
     opacity: 1;
     color: #ffffff;
 }
+
+.pagesCounter {
+    font-family: "RobotoCondensed", sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.32px;
+    text-transform: uppercase;
+    text-decoration: none;
+    opacity: 0.77;
+
+    margin-left: 15px;
+}
+
+.paginatorBlockPrevious, .paginatorBlockNext {
+    height: 100%;
+    text-align: center;
+    width: 40px;
+    user-select: none;
+}

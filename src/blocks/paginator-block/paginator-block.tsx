@@ -17,10 +17,23 @@ export const PaginatorBlock = ({
   currentPage,
   paginate
 }: PaginatorBlockProps) => {
-  const pageNumbers = getPageNumbers(totalVehicles, vehiclesPerPage, currentPage);
+  const totalPagesNumber = Math.ceil(totalVehicles / vehiclesPerPage);
+  const pageNumbers = getPageNumbers(totalPagesNumber, currentPage);
   return (
     <nav className="paginatorBlockNav">
       <ul className="paginatorBlockUl">
+        <li className="paginatorBlockPrevious">
+          <a
+            href="#"
+            onClick={(e) => {
+              e.preventDefault();
+              if (currentPage - 1 <= 0) return;
+              paginate((currentPage -= 1));
+            }}
+          >
+            <span className="paginatorBlockButtonText">&lt;</span>
+          </a>
+        </li>
         {pageNumbers.map((number) => (
           <li key={number} className="paginatorBlockLi">
             <a
@@ -37,6 +50,21 @@ export const PaginatorBlock = ({
             </a>
           </li>
         ))}
+        <li className="paginatorBlockNext">
+          <a
+            href="#"
+            onClick={(e) => {
+              e.preventDefault();
+              if (currentPage + 1 > pageNumbers[pageNumbers.length - 1]) return;
+              paginate((currentPage += 1));
+            }}
+          >
+            <span className="paginatorBlockButtonText">&gt;</span>
+          </a>
+        </li>
+        <li>
+          <span className="pagesCounter">total pages: {totalPagesNumber}</span>
+        </li>
       </ul>
     </nav>
   );
