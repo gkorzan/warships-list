@@ -15,6 +15,17 @@
 ---
 Project which main goal is to showcase all of the World of Warships vehicles in their glory
 
+**IT IS ONLY A MVP** version of the project, there is alot of space for improvement, for example:
+* Descriptive page or popup with info about ship from the list that opens on click
+* Card carusel on the top of the page after or befor filter with "stared" ships
+* Organize table with subdivisions
+* Sorting of the table 
+* Request optimisation and caching
+* Test coverage
+* CI/CD
+
+and more...
+
 ## Startup
 You will need *node* of *18* version or later
     
