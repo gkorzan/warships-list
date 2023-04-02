@@ -4,6 +4,8 @@ import { fetchVehicles, fetchNations, fetchMediaPath, VehicleType, NationType } 
 import { PaginatorBlock } from '../blocks/paginator-block/paginator-block';
 import { FilterBlock } from '../blocks/filter-block/filter-block';
 
+import './list-page.css';
+
 export const ListPage = () => {
   const [vehicles, setVehicles] = useState<VehicleType[]>([]);
   const [currentVehicles, setCurrentVehicles] = useState<VehicleType[]>([]);
@@ -47,6 +49,10 @@ export const ListPage = () => {
     getMediaPath();
   }, []);
 
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [currentVehicles]);
+
   const indexOfLastVehicle = currentPage * vehiclesPerPage;
   const indexOfFirstVehicle = indexOfLastVehicle - vehiclesPerPage;
   const currentVehiclesPerPage = currentVehicles.slice(indexOfFirstVehicle, indexOfLastVehicle);
@@ -55,9 +61,13 @@ export const ListPage = () => {
 
   return (
     <div className="listPageWrapper">
-      <h1>Vehicles</h1>
+      <div className="header">
+        <div className="logo"></div>
+        <h1>Vehicles</h1>
+      </div>
       <FilterBlock
         vehicles={vehicles}
+        nationsMap={nations}
         currentVehicles={currentVehicles}
         setCurrentVehicles={setCurrentVehicles}
       />

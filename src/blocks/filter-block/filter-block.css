@@ -1,0 +1,84 @@
+.filterBlockForm {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+    background-color: rgb(51, 51, 51);
+    padding: 5px 0;
+}
+
+.filterBlockForm > * {
+    
+}
+
+.filterBlockForm > select {
+    padding: 5px;
+    width: 115px;
+    background-color: rgb(51, 51, 51);
+    border:0;
+    color: inherit;
+    border: 1px solid #ffffff;
+    height: 40px;
+
+    background-color: #19a5a5;
+    border-color: #19a5a5;
+    color: #FFFFFF;
+}
+
+.filterBlockForm > select:hover {
+    opacity: 0.7;
+}
+
+.filterBlockInput {
+    padding: 5px;
+    margin-left: 5px;
+    font-family:inherit;
+    font-size: inherit;
+    background-color: rgb(51, 51, 51);
+    border:0;
+    color: inherit;
+    border-bottom: 3px solid #00cccc;
+    height: 28px;
+}
+
+.filterBlockInput:hover {
+    opacity: 0.7;
+}
+
+.filterBlockSubmitButton {
+    padding: 5px;
+    height: 40px;
+    width: 115px;
+    text-transform: capitalize;
+    font-family:inherit;
+    font-size: inherit;
+    color: inherit;
+    border:0;
+    background-image: linear-gradient(to top, #e12e00 0, #fd6200 100%);
+    cursor: pointer;
+    font-family: "RobotoCondensed", sans-serif;
+}
+
+.filterBlockSubmitButton:hover {
+    background-size: 100% 400%;
+    text-decoration: none;
+}
+
+.filterBlockClearButton {
+    padding: 5px 10px;
+    height: 40px;
+    text-transform: capitalize;
+    font-family:inherit;
+    font-size: inherit;
+    color: inherit;
+    border:0;
+
+    background-color: transparent;
+border: 1px solid;
+color: #fff;
+border-color: #fff;
+}
+
+.filterBlockClearButton:hover {
+    opacity: 0.7;
+}

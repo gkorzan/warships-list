@@ -1,4 +1,45 @@
 .listBlockTable {
     box-sizing: border-box;
     width: 100%;
+    /* min-height: 610px; */
+    /* height: 610px; */
+    padding: 5px 0;
 }
+
+.listBlockRow {
+    height: 56px;
+}
+
+/* spacing */
+
+table {
+    table-layout: fixed;
+    width: 100%;
+    border-collapse: collapse;
+    /* border: 3px solid purple; */
+  }
+  
+  td:nth-child(1), th:nth-child(1) {
+    width: 40%;
+  }
+  
+  td::nth-child(2), th:nth-child(2) {
+    width: 25%;
+  }
+  
+   td::nth-child(3), th:nth-child(3) {
+    width: 20%;
+  }
+  
+   td::nth-child(4), th:nth-child(4) {
+    width: 15%;
+  }
+  
+  th,
+  td {
+    padding: 20px;
+  }
+
+  .listBlockCellName {
+    text-align: left
+  }

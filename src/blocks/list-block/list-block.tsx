@@ -12,34 +12,49 @@ type ListBlockProps = {
 };
 
 export const ListBlock = ({ vehicles, nationsMap, mediaPath, isLoading }: ListBlockProps) => {
-  if (isLoading) return <h2>Loading</h2>;
+  if (isLoading)
+    return (
+      <div className="listBlockTable">
+        {[...Array(10)].map((key) => (
+          <div key={key} style={{ background: '#fff' }}>
+            Kek
+          </div>
+        ))}
+      </div>
+    );
+  if (vehicles.length === 0) return <h2>No results found</h2>;
   return (
     <table className="listBlockTable">
       <tbody>
         <tr>
           <th>ShipIcon</th>
-          <th>Name</th>
+          <th className="listBlockCellName">Name</th>
           <th>Nation</th>
           <th>Level</th>
         </tr>
         {vehicles.map((vehicle) => {
           const nationName = nationsMap[vehicle.nation].localization.mark.en;
           const nationFlagUrl = nationsMap[vehicle.nation].icons.default;
-          const shipIconUrl = vehicle.icons.contour;
+          const shipIconUrl = vehicle.icons.contourAlive;
           return (
-            <tr key={`tableRow-${vehicle.id}`}>
+            <tr key={`tableRow-${vehicle.id}`} className="listBlockRow">
               <th>
                 <AtomIcon
                   baseUrl={mediaPath}
                   iconUrl={shipIconUrl}
                   alt={vehicle.name}
                   backgroundColor="#ffffff"
+                  iconType="ship"
                 />
               </th>
-              <th>{vehicle.localization.mark.en}</th>
-              {/* <th>{nationsMap[vehicle.nation].localization.mark.en}</th> */}
+              <th className="listBlockCellName">{vehicle.localization.mark.en}</th>
               <th>
-                <AtomIcon baseUrl={mediaPath} iconUrl={nationFlagUrl} alt={nationName} />
+                <AtomIcon
+                  baseUrl={mediaPath}
+                  iconUrl={nationFlagUrl}
+                  alt={nationName}
+                  iconType="flag"
+                />
               </th>
               <th>{vehicle.level}</th>
             </tr>
