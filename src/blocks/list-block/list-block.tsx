@@ -15,11 +15,7 @@ export const ListBlock = ({ vehicles, nationsMap, mediaPath, isLoading }: ListBl
   if (isLoading)
     return (
       <div className="listBlockTable">
-        {[...Array(10)].map((key) => (
-          <div key={key} style={{ background: '#fff' }}>
-            Kek
-          </div>
-        ))}
+        <h2>Loading...</h2>
       </div>
     );
   if (vehicles.length === 0) return <h2>No results found</h2>;
