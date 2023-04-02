@@ -10,6 +10,7 @@ type IconUrls = {
   default: string;
   large: string;
   contour: string;
+  contourDead: string;
   contourAlive: string;
 };
 

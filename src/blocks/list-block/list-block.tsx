@@ -35,7 +35,9 @@ export const ListBlock = ({ vehicles, nationsMap, mediaPath, isLoading }: ListBl
         {vehicles.map((vehicle) => {
           const nationName = nationsMap[vehicle.nation].localization.mark.en;
           const nationFlagUrl = nationsMap[vehicle.nation].icons.default;
-          const shipIconUrl = vehicle.icons.contourAlive;
+          const shipIconUrl = vehicle.name.includes('Pr_66_Moskva')
+            ? vehicle.icons.contourDead
+            : vehicle.icons.contourAlive;
           return (
             <tr key={`tableRow-${vehicle.id}`} className="listBlockRow">
               <th>
@@ -62,10 +64,5 @@ export const ListBlock = ({ vehicles, nationsMap, mediaPath, isLoading }: ListBl
         })}
       </tbody>
     </table>
-    // <ul>
-    //   {vehicles.map((vehicle) => (
-    //     <li key={vehicle.id}>{vehicle.name}</li>
-    //   ))}
-    // </ul>
   );
 };

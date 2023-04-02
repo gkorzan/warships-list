@@ -24,7 +24,8 @@ const vehiclesMapper = (rawVehicles: object): VehicleType[] => {
       default: rawVehicle.icons.default,
       large: rawVehicle.icons.large,
       contour: rawVehicle.icons.contour,
-      contourAlive: rawVehicle.icons.contour_alive
+      contourAlive: rawVehicle.icons.contour_alive,
+      contourDead: rawVehicle.icons.contour_dead
     },
     nation: rawVehicle.nation
   }));
