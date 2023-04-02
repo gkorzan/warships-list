@@ -3,7 +3,7 @@ import { naitonsMapper } from './mappers/nations-mapper';
 import { vehiclesMapper } from './mappers/vehicles-mapper';
 import { vehiclesTypesMapper } from './mappers/vehicles-types-mapper';
 import { NationType } from './models/nation.types';
-import { ShipType } from './models/ship.types';
+import { VehicleType } from './models/vehicle.types';
 
 const VECHILES_URL = process.env.VECHILES_URL;
 const MEDIA_PATH_URL = process.env.MEDIA_PATH_URL;
@@ -11,7 +11,7 @@ const NATIONS_URL = process.env.NATIONS_URL;
 const VECHILE_TYPES_COMMON_URL = process.env.VECHILE_TYPES_COMMON_URL;
 
 // TODO: undefined URL constant assertion
-const fetchVehicles = async (): Promise<ShipType[]> => {
+const fetchVehicles = async (): Promise<VehicleType[]> => {
   const vehiclesRaw = await fetchDataHelper(VECHILES_URL ?? '');
   const vehicles = vehiclesMapper(vehiclesRaw as object);
   return vehicles;

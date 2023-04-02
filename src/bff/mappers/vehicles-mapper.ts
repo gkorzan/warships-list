@@ -1,6 +1,6 @@
-import { ShipType } from '../models/ship.types';
+import { VehicleType } from '../models/vehicle.types';
 
-const vehiclesMapper = (rawVehicles: object): ShipType[] => {
+const vehiclesMapper = (rawVehicles: object): VehicleType[] => {
   return Object.entries(rawVehicles).map(([key, rawVehicle]) => ({
     id: parseInt(key),
     level: rawVehicle.level,

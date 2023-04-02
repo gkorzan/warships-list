@@ -13,7 +13,7 @@ type IconUrls = {
   contourAlive: string;
 };
 
-type ShipType = {
+type VehicleType = {
   id: number;
   level: number;
   name: string;
@@ -23,4 +23,4 @@ type ShipType = {
   nation: string;
 };
 
-export { ShipType };
+export { VehicleType };
